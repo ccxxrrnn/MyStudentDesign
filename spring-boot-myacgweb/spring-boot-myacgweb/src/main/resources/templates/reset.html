@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
+	<link rel="stylesheet" type="text/css"  th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}">
+	<link rel="stylesheet" type="text/css" href="../static/log-reg/css/my-login.css" th:href="@{/log-reg/css/my-login.css}">
+</head>
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center align-items-center h-100">
+				<div class="card-wrapper">
+					<div class="brand" style="margin-top: 100px;">
+						<img src="../static/log-reg/img/logo.jpg" th:src="@{log-reg/img/logo.jpg}">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title" th:text="#{reset.title}">Reset Password</h4>
+							<form method="POST" th:action="@{/doReset}" >
+								<div class="form-group">
+									<label for="new-password" th:text="#{reset.password}">New Password</label>
+									<input id="new-password" type="password" class="form-control" name="password" required autofocus data-eye>
+									<div class="form-text text-muted" th:text="#{reset.tip}">
+										Make sure your password is strong and easy to remember
+									</div>
+								</div>
+								<div class="form-group no-margin">
+									<button th:id="ResetBtn" type="submit" class="btn btn-primary btn-block" th:text="#{reset.Btn}">
+										Reset Password
+									</button>
+								</div>
+							</form>
+							<div>
+								<a th:href="@{/forget}">返回上一步</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div th:replace="command/footer::footerindex"></div>
+
+	<script src="../static/log-reg/js/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
+	<script  th:src="@{/webjars/bootstrap/4.4.1/js/bootstrap.js}"></script>
+	<script src="../static/log-reg/js/my-login.js" th:src="@{/log-reg/js/my-login.js}"></script>
+<!--<script type="text/javascript">-->
+<!--	$("#ResetBtn").click(function(){-->
+<!--		var adata={-->
+<!--			"password" : $(#password).val()-->
+<!--		};-->
+<!--		var data= JSON.stringify(adata);-->
+<!--		$.ajax({-->
+<!--			url:"/resetpassword",-->
+<!--			contentType: "application/json;cherset=utf-8",-->
+<!--			dataType:"json", //返回格式为json-->
+<!--			async:true,//请求是否异步，默认为异步，这也是ajax重要特性-->
+<!--			data:data, //参数值-->
+<!--			type:"POST", //请求方式-->
+<!--			success:function(obj){-->
+<!--				alert(obj.message);-->
+<!--				location.href="login.html";-->
+<!--			}-->
+<!--		});-->
+<!--	})-->
+
+<!--</script>-->
+</body>
+</html>

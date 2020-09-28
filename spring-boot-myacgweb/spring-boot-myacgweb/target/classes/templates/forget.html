@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<meta charset="utf-8">
+<meta name="author" content="Kodinger">
+<title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
+<link rel="stylesheet" type="text/css"  th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}">
+<link rel="stylesheet" type="text/css" href="../static/log-reg/css/my-login.css" th:href="@{/log-reg/css/my-login.css}">
+
+
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center align-items-center h-100">
+				<div class="card-wrapper">
+					<div class="brand" style="margin-top: 100px;">
+						<img src="../static/log-reg/img/logo.jpg" th:src="@{/log-reg/img/logo.jpg}">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title" th:text="#{forget.title}">Forgot Password</h4>
+							<form method="POST" th:action="@{/reset}">
+								<div class="form-group">
+									<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+									<label for="email" th:text="#{forget.email}">E-Mail Address</label>
+									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+									<div class="form-text text-muted" th:text="#{forget.tip}">
+										By clicking "Reset Password" we will send a password reset link
+									</div>
+								</div>
+
+								<div class="form-group no-margin">
+									<button type="submit" class="btn btn-primary btn-block" th:text="#{forget.pass}">
+										Reset Password
+									</button>
+								</div>
+							</form>
+							<div>
+								<a th:href="@{/login}">返回上一步</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div th:replace="command/footer::footerindex"></div>
+</body>
+</html>

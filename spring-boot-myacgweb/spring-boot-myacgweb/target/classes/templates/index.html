@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="utf-8">
+  <title>Polaroyd - Bootstrap Agency Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic-ext" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link th:href="@{/index_static/lib/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link th:href="@{/index_static/lib/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/ionicons/css/ionicons.min.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/photostack/photostack.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/fullpage-menu/fullpage-menu.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/cubeportfolio/cubeportfolio.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/superslides/superslides.css}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link th:href="@{/index_static/css/style.css}" rel="stylesheet">
+  
+</head>
+
+<body>
+  <!-- Custom navbar -->
+  <div th:replace="command/top::topindex"></div>
+  <!-- /END CUSTOM NAVBAR -->
+
+  <section id="photostack-1" class="photostack photostack-start">
+    <div>
+      <figure th:each="img:${mainimgs}">
+        <a  href="#" class="photostack-img"><img th:src="@{'/'+${img.url}}"  /></a>
+        <figcaption>
+          <h2 class="photostack-title" >[[${img.msg}]]</h2>
+        </figcaption>
+      </figure>
+      <figure data-dummy="" th:each="img:${showimgs}">
+        <a href="#" class="photostack-img"><img th:src="@{'/'+${img.url}}" /></a>
+        <figcaption>
+          <h2 class="photostack-title" >[[${img.msg}]]</h2>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+  <div class="container">
+    <div class="row mt presentation">
+      <img class="camera aligncenter" src="/index_static/img/camera.png" alt="">
+      <h1 class="centered" >[[#{index.middletitle}]]</h1>
+      <hr>
+      <div class="col-lg-4 col-md-4">
+        <h3>[[#{index.middletitle_introducetitle}]]</h3>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <p> [[#{index.middletitle_introduce_left}]].</p>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <p>[[#{index.middletitle_introduce_right}]].</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div>
+    <div class="row mt">
+      <div id="filters-container" class="cbp-l-filters-alignRight container col-sm-12">
+        <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
+          [[#{index.typeall}]]
+          <div class="cbp-filter-counter"></div>
+        </div>
+        <div data-filter=".animation" class="cbp-filter-item">
+          [[#{index.type01}]]
+          <div class="cbp-filter-counter"></div>
+        </div>
+        <div data-filter=".His_play" class="cbp-filter-item">
+          [[#{index.type02}]]
+          <div class="cbp-filter-counter"></div>
+        </div>
+        <div data-filter=".picture" class="cbp-filter-item">
+          [[#{index.type03}]]
+          <div class="cbp-filter-counter"></div>
+        </div>
+        <div data-filter=".music" class="cbp-filter-item">
+          [[#{index.type04}]]
+          <div class="cbp-filter-counter"></div>
+        </div>
+      </div>
+      <!-- end:Filter -->
+    </div>
+  </div>
+  <div id="grid-container" class="cbp-l-grid-fullScreen">
+    <ul>
+      <li class="cbp-item picture">
+        <a class="cbp-caption cbp-lightbox" data-title="Image" href="/index_static/img/01.jpg">
+          <div class="cbp-caption-defaultWrap">
+            <img src="/index_static/img/01.jpg" alt="" class="img-responsive">
+          </div>
+          <div class="cbp-caption-activeWrap">
+            <div class="cbp-l-caption-alignCenter">
+              <div class="cbp-l-caption-body">
+                <div class="cbp-l-caption-title">[[#{index.img16}]]</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+      <!-- end:Item -->
+      <li class="cbp-item His_play">
+        <a  class="cbp-caption" data-title="Image" th:href="@{/videoPlay(id=17)}">
+          <div >
+            <img src="/index_static/img/video/01.jpg"  alt="" class="img-responsive">
+          </div>
+          <div class="cbp-caption-activeWrap">
+            <div class="cbp-l-caption-alignCenter">
+              <div class="cbp-l-caption-body">
+                <div class="cbp-l-caption-title" >[[#{index.video01}]]</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+      <!-- end:Item -->
+    </ul>
+  </div>
+  <!-- end:Clients section -->
+
+  <div th:replace="command/footer::footerindex"></div>
+
+
+  <!-- JavaScript Libraries -->
+  <script  th:src="@{/index_static/lib/jquery/jquery.min.js}"></script>
+  <script  th:src="@{/index_static/lib/modernizr/modernizr.min.js}"></script>
+  <script  th:src="@{/index_static/lib/bootstrap/js/bootstrap.min.js}"></script>
+  <script  th:src="@{/index_static/lib/php-mail-form/validate.js}"></script>
+  <script  th:src="@{/index_static/lib/easing/easing.min.js}"></script>
+  <script  th:src="@{/index_static/lib/cubeportfolio/cubeportfolio.js}"></script>
+  <script  th:src="@{/index_static/lib/classie/classie.js}"></script>
+  <script  th:src="@{/index_static/lib/fullpage-menu/fullpage-menu.js}"></script>
+  <script  th:src="@{/index_static/lib/photostack/photostack.js}"></script>
+  <script  th:src="@{/index_static/lib/superslides/superslides.js}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="/index_static/js/main.js" th:src="@{/index_static/js/main.js}"></script>
+
+</body>
+</html>

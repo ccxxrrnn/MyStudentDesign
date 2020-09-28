@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}">
+	<link rel="stylesheet" type="text/css" href="../static/log-reg/css/my-login.css" th:href="@{/log-reg/css/my-login.css}">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic-ext" rel="stylesheet">
+
+	<!-- Bootstrap CSS File -->
+	<link th:href="@{/index_static/lib/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+	<!-- Libraries CSS Files -->
+	<link th:href="@{/index_static/lib/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+	<link th:href="@{/index_static/lib/ionicons/css/ionicons.min.css}" rel="stylesheet">
+	<link th:href="@{/index_static/lib/photostack/photostack.css}" rel="stylesheet">
+	<link th:href="@{/index_static/lib/fullpage-menu/fullpage-menu.css}" rel="stylesheet">
+	<link th:href="@{/index_static/lib/cubeportfolio/cubeportfolio.css}" rel="stylesheet">
+	<link th:href="@{/index_static/lib/superslides/superslides.css}" rel="stylesheet">
+
+	<!-- Main Stylesheet File -->
+	<link th:href="@{/index_static/css/style.css}" rel="stylesheet">
+
+
+</head>
+
+<body class="my-login-page">
+
+<div  th:replace="command/top::topindex"></div>
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand" style="margin-top: 100px;">
+						<img src="../static/log-reg/img/logo.jpg" th:src="@{/log-reg/img/logo.jpg}">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">[[#{register.title}]]</h4>
+							<form method="POST" th:action="@{/doRegister}">
+								<div class="form-group">
+									<label for="name">[[#{register.username}]]</label>
+									<input id="name" th:name="username" type="text" class="form-control" name="name" required autofocus>
+								</div>
+
+								<div class="form-group">
+									<label for="email">[[#{register.email}]]</label>
+									<input id="email" type="email" class="form-control" name="email" required>
+								</div>
+
+								<div class="form-group">
+									<label for="password">[[#{register.password}]]</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+								</div>
+
+								<div class="form-group">
+									<label>
+										<input type="checkbox" name="agree" value="1" > [[#{register.tip}]]
+									</label>
+								</div>
+
+								<div class="form-group no-margin">
+									<button type="submit" class="btn btn-primary btn-block" >[[#{register.Btn}]]
+									</button>
+								</div>
+								<div class="margin-top20 text-center">
+									<p>[[#{register.tip2}]]</p> <a href="login.html" th:href="@{/login}">[[#{register.login}]]</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<div th:replace="command/footer::footerindex"></div>
+
+	<script src="../static/log-reg/js/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
+	<script  th:src="@{/webjars/bootstrap/4.4.1/js/bootstrap.js}"></script>
+	<script src="../static/log-reg/js/my-login.js" th:src="@{/log-reg/js/my-login.js}"></script>
+
+<!-- JavaScript Libraries -->
+<script  th:src="@{/index_static/lib/jquery/jquery.min.js}"></script>
+<script  th:src="@{/index_static/lib/modernizr/modernizr.min.js}"></script>
+<script  th:src="@{/index_static/lib/bootstrap/js/bootstrap.min.js}"></script>
+<script  th:src="@{/index_static/lib/php-mail-form/validate.js}"></script>
+<script  th:src="@{/index_static/lib/easing/easing.min.js}"></script>
+<script  th:src="@{/index_static/lib/cubeportfolio/cubeportfolio.js}"></script>
+<script  th:src="@{/index_static/lib/classie/classie.js}"></script>
+<script  th:src="@{/index_static/lib/fullpage-menu/fullpage-menu.js}"></script>
+<script  th:src="@{/index_static/lib/photostack/photostack.js}"></script>
+<script  th:src="@{/index_static/lib/superslides/superslides.js}"></script>
+
+<!-- Template Main Javascript File -->
+<script src="/index_static/js/main.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			var domsg = "[[${domsg}]]";
+			if(domsg != ''){
+				alert(domsg);
+			}
+		})
+	</script>
+</body>
+</html>

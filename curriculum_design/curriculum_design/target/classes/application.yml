@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/News
+    username: root
+    password: root
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+    freemarker:
+      cache: false    #页面不加载缓存，修改即时生效
+
+
+mybatis:
+  type-aliases-package: ecjtu.bean
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    ecjtu.mapper: debug
+
+server:
+  port: 9002
+
+
+
+
+

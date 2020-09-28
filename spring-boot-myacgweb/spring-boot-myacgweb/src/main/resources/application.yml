@@ -1,0 +1,71 @@
+spring:
+  resources:
+    static-locations: classpath:/static/
+  datasource:
+    #   数据源基本配置
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myacgweb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+    date-format: yyyy-MM-dd
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n.login,i18n.forget,i18n.reset,i18n.index,i18n.register
+  #  messages:
+#    basename: i18n/login
+  application:
+    name: springboot-test-exam1
+    druid:
+      # 连接池的配置信息
+      # 初始化大小，最小，最大
+      initial-size: 5
+      min-idle: 5
+      maxActive: 20
+      # 配置获取连接等待超时的时间
+      maxWait: 600000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 600000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 3000000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,slf4j
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connectionProperties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
+      # 配置DruidStatFilter
+
+server:
+  port: 8080
+#  servlet:
+#    context-path: /xwweb
+
+
+
+logging:
+  level:
+    org: ERROR
+    net: ERROR
+    com: ERROR
+    com.xw.springbootmyacgweb.mapper: DEBUG
+
+
+# mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.xuan.entity  # 注意：对应实体类的路径
+  configuration:
+    #org.apache.ibatis.logging.stdout.StdOutImpl 控制台打印sql语句方便调试sql语句执行错误
+    #org.apache.ibatis.logging.log4j2.Log4j2Impl:这个不在控制台打印查询结果,但是在log4j中打印
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+    mapUnderscoreToCamelCase: true # 开启驼峰命名转换法

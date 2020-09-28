@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="utf-8">
+  <title>Polaroyd - Bootstrap Agency Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic-ext" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link th:href="@{/index_static/lib/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link th:href="@{/index_static/lib/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/ionicons/css/ionicons.min.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/photostack/photostack.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/fullpage-menu/fullpage-menu.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/cubeportfolio/cubeportfolio.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/superslides/superslides.css}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link th:href="@{/index_static/css/style.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Custom navbar -->
+  <div th:replace="command/top::topindex"></div>
+  <!-- /END CUSTOM NAVBAR -->
+
+
+  <div class="container">
+    <div class="row mt3 presentation centered">
+      <i class="icon ion-ios7-briefcase-outline large-icon"></i>
+      <h1 class="centered">我们的网页内容</h1>
+      <hr>
+    </div>
+    <!-- /row -->
+  </div>
+
+  <div id="grid-container" class="cbp-l-grid-fullScreen">
+    <ul>
+      <li class="cbp-item" th:each="l:${lists}">
+        <a th:href="@{/videoPlay(id=${l.id})}" class="cbp-caption" th:if="${l.category_id} eq 1 or ${l.category_id} eq 2">
+          <div class="cbp-caption-defaultWrap">
+            <video   th:src="@{'/'+${l.url}}"></video>
+          </div>
+          <div class="cbp-caption-activeWrap">
+            <div class="cbp-l-caption-alignCenter">
+              <div class="cbp-l-caption-body">
+                <div class="cbp-l-caption-title">[[${l.msg}]]</div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a th:href="@{'/'+${l.url}}" class="cbp-caption"  th:if="${l.category_id} eq 3">
+          <div class="cbp-caption-defaultWrap" >
+            <img  class="img-responsive" th:src="@{'/'+${l.url}}"  alt="" src=""/>
+          </div>
+          <div class="cbp-caption-activeWrap">
+            <div class="cbp-l-caption-alignCenter">
+              <div class="cbp-l-caption-body">
+                <div class="cbp-l-caption-title">[[${l.msg}]]</div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a  class="cbp-caption"  th:if="${l.category_id} eq 4" >
+          <div   class="cbp-caption-defaultWrap" style="position:fixed; bottom:0; right:0; background-image: url(/index_static/img/musicinit.jpg)">
+            <audio controls>
+              <source th:src="@{'/'+${l.url}}" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="cbp-caption-activeWrap">
+            <div class="cbp-l-caption-alignCenter">
+              <div class="cbp-l-caption-body">
+                <div class="cbp-l-caption-title">[[${l.msg}]]</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div th:replace="command/footer::footerindex"></div>
+
+
+  <!-- JavaScript Libraries -->
+  <script  th:src="@{/index_static/lib/jquery/jquery.min.js}"></script>
+  <script  th:src="@{/index_static/lib/modernizr/modernizr.min.js}"></script>
+  <script  th:src="@{/index_static/lib/bootstrap/js/bootstrap.min.js}"></script>
+  <script  th:src="@{/index_static/lib/php-mail-form/validate.js}"></script>
+  <script  th:src="@{/index_static/lib/easing/easing.min.js}"></script>
+  <script  th:src="@{/index_static/lib/cubeportfolio/cubeportfolio.js}"></script>
+  <script  th:src="@{/index_static/lib/classie/classie.js}"></script>
+  <script  th:src="@{/index_static/lib/fullpage-menu/fullpage-menu.js}"></script>
+  <script  th:src="@{/index_static/lib/photostack/photostack.js}"></script>
+  <script  th:src="@{/index_static/lib/superslides/superslides.js}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="/index_static/js/main.js" th:src="@{/index_static/js/main.js}"></script>
+</body>
+</html>

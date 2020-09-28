@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>fotter</title>
+</head>
+<body>
+<section id="contact" class="section-bg-color " th:fragment="footerindex">
+    <div class="container centered ptb">
+        <div class="col-md-2 col-md-offset-1">
+            <i class="icon ion-ios7-location-outline large-icon"></i>
+            <h5>[[#{index.footer01}]]</h5>
+            <a rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">[[#{index.adress}]].</a>
+        </div>
+        <div class="col-md-2 col-md-offset-2">
+            <i class="icon ion-ios7-telephone-outline large-icon"></i>
+            <h5>[[#{index.footer02}]]</h5>
+            <p>[[#{index.phone}]].</p>
+        </div>
+        <div class="col-md-2 col-md-offset-2">
+            <i class="icon ion-ios7-paperplane-outline large-icon"></i>
+            <h5>[[#{index.footer03}]]</h5>
+            <p>[[#{index.email}]].</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

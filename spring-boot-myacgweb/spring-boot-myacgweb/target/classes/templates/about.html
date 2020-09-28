@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="utf-8">
+  <title>Polaroyd - Bootstrap Agency Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic-ext" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link th:href="@{/index_static/lib/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link th:href="@{/index_static/lib/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/ionicons/css/ionicons.min.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/photostack/photostack.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/fullpage-menu/fullpage-menu.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/cubeportfolio/cubeportfolio.css}" rel="stylesheet">
+  <link th:href="@{/index_static/lib/superslides/superslides.css}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link th:href="@{/index_static/css/style.css}" rel="stylesheet">
+
+  
+</head>
+
+<body>
+
+  <!-- Custom navbar -->
+  <div th:replace="command/top::topindex"></div>
+  <!-- /END CUSTOM NAVBAR -->
+
+  <div class="container">
+    <div class="row mt3 presentation centered">
+      <i class="icon ion-ios7-bookmarks-outline large-icon"></i>
+      <h1 class="centered">ABOUT US</h1>
+      <hr>
+    </div>
+    <div class="row presentation">
+      <div class="col-lg-4 col-md-4">
+        <h3>About Our Company</h3>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <p>暂时没有想好写什么</p>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <p>暂时没有想好写什么</p>
+      </div>
+    </div>
+    <!-- /row -->
+
+  </div>
+
+  <section id="slides">
+    <ul class="slides-container">
+      <li>
+        <img th:src="@{/index_static/img/about01.jpg}"  alt="">
+      </li>
+      <li>
+        <img th:src="@{/index_static/img/about02.jpg}" alt="">
+      </li>
+      <li>
+        <img th:src="@{/index_static/img/about03.jpg}" alt="">
+      </li>
+    </ul>
+    <div id="bannertext">
+      <h3>稍微放一些我看过的动漫图片</h3>
+      <h1>0.0</h1>
+    </div>
+  </section>
+
+
+
+  <div class="container mt2">
+    <div class="row presentation">
+      <div class="col-lg-4 col-md-4">
+        <h3>网站的简介</h3>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <h3>1</h3>
+        <p>员工/p>
+        <p>。。。。。。。。。。</p>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <h3>999999999+</h3>
+        <p>CLIENTS</p>
+        <p>多多益善.</p>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <h3>$ ？</h3>
+        <p>税收</p>
+        <p>不清楚.</p>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <h3>3/365</h3>
+        <p>年限</p>
+        <p>短.</p>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+
+  <div class="container mt">
+    <div class="row presentation">
+      <div class="col-lg-1 col-md-1 centered">
+        <i class="icon ion-ios7-flag-outline large-icon"></i>
+        <h3>2019</h3>
+      </div>
+      <div class="col-lg-3 col-md-3">
+        <h4>我们的开始</h4>
+        <p>源于一次java—web的大作业.</p>
+      </div>
+      <div class="col-lg-1 col-md-1 centered">
+        <i class="icon ion-ios7-pricetag-outline large-icon"></i>
+        <h3>？？？</h3>
+      </div>
+      <div class="col-lg-3 col-md-3">
+        <h4>我们的第一个几百万</h4>
+        <p>？？？？.</p>
+      </div>
+      <div class="col-lg-1 col-md-1 centered">
+        <i class="icon ion-ios7-people-outline large-icon"></i>
+        <h3>？？？</h3>
+      </div>
+      <div class="col-lg-3 col-md-3">
+        <h4>100名员工</h4>
+        <p>未来可期？.</p>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+
+  <div th:replace="command/footer::footerindex"></div>
+
+
+
+  <!-- JavaScript Libraries -->
+  <script  th:src="@{/index_static/lib/jquery/jquery.min.js}"></script>
+  <script  th:src="@{/index_static/lib/modernizr/modernizr.min.js}"></script>
+  <script  th:src="@{/index_static/lib/bootstrap/js/bootstrap.min.js}"></script>
+  <script  th:src="@{/index_static/lib/php-mail-form/validate.js}"></script>
+  <script  th:src="@{/index_static/lib/easing/easing.min.js}"></script>
+  <script  th:src="@{/index_static/lib/cubeportfolio/cubeportfolio.js}"></script>
+  <script  th:src="@{/index_static/lib/classie/classie.js}"></script>
+  <script  th:src="@{/index_static/lib/fullpage-menu/fullpage-menu.js}"></script>
+  <script  th:src="@{/index_static/lib/photostack/photostack.js}"></script>
+  <script  th:src="@{/index_static/lib/superslides/superslides.js}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="/index_static/js/main.js" th:src="@{/index_static/js/main.js}"></script>
+
+</body>
+</html>

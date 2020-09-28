@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
+	<link rel="stylesheet" type="text/css"  th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}">
+	<link rel="stylesheet" type="text/css" href="../static/log-reg/css/my-login.css" th:href="@{/log-reg/css/my-login.css}">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic-ext" rel="stylesheet">
+
+	<!-- Bootstrap CSS File -->
+	<link th:href="@{/index_static/lib/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+	<!-- Libraries CSS Files -->
+	<link th:href="@{/index_static/lib/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+	<link th:href="@{/index_static/lib/ionicons/css/ionicons.min.css}" rel="stylesheet">
+	<link th:href="@{/index_static/lib/photostack/photostack.css}" rel="stylesheet">
+	<link th:href="@{/index_static/lib/fullpage-menu/fullpage-menu.css}" rel="stylesheet">
+	<link th:href="@{/index_static/lib/cubeportfolio/cubeportfolio.css}" rel="stylesheet">
+	<link th:href="@{/index_static/lib/superslides/superslides.css}" rel="stylesheet">
+
+	<!-- Main Stylesheet File -->
+	<link th:href="@{/index_static/css/style.css}" rel="stylesheet">
+</head>
+<body class="my-login-page">
+	<div  th:replace="command/top::topindex"></div>
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand" style="margin-top: 100px;">
+						<img src="../static/log-reg/img/logo.jpg" th:src="@{/log-reg/img/logo.jpg}">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 style="text-align: center" id="login" class="card-title" th:text="#{login.title}">Login</h4>
+							<p style="color: red" id="msg"></p>
+							<form method="POST" th:action="@{/doLogin}" >
+							 
+								<div class="form-group">
+									<label for="email" th:text="#{login.email}">E-Mail Address</label>
+
+									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+								</div>
+								<div class="form-group">
+									<label for="password" ><span th:text="#{login.password}">Password</span>
+										<a href="forget.html" class="float-right" th:href="@{/forget}">
+											<span th:text="#{login.forgetpas}">Forgot Password?</span>
+										</a>
+									</label>
+									<input  id="password" type="password" class="form-control" name="password" required data-eye>
+								</div>
+
+								<div class="form-group">
+									<label >
+										<input th:text="#{login.rem_me}"  type="checkbox" name="remember">
+									</label>
+									<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+								</div>
+
+								<div class="form-group no-margin">
+									<button id="loginBtn" type="submit" th:text="#{login.loginBtn}"  class="btn btn-primary btn-block">
+										Login
+									</button>
+								</div>
+								<div class="margin-top20 text-center"  >
+									<span th:text="#{login.register}">Don't have an account?</span> <a th:text="#{login.register_href}" href="register.html" th:href="@{/register}">Create One</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+						<a class="btn btn-sm" th:href="@{/login.html(l='zh_CN')}">中文</a>
+						<a class="btn btn-sm" th:href="@{/login.html(l='en_US')}">English</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div th:replace="command/footer::footerindex"></div>
+
+	<script src="../static/log-reg/js/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
+	<script  th:src="@{/webjars/bootstrap/4.4.1/js/bootstrap.js}"></script>
+	<script src="../static/log-reg/js/my-login.js" th:src="@{/log-reg/js/my-login.js}"></script>
+	<!-- JavaScript Libraries -->
+	<script  th:src="@{/index_static/lib/jquery/jquery.min.js}"></script>
+	<script  th:src="@{/index_static/lib/modernizr/modernizr.min.js}"></script>
+	<script  th:src="@{/index_static/lib/bootstrap/js/bootstrap.min.js}"></script>
+	<script  th:src="@{/index_static/lib/php-mail-form/validate.js}"></script>
+	<script  th:src="@{/index_static/lib/easing/easing.min.js}"></script>
+	<script  th:src="@{/index_static/lib/cubeportfolio/cubeportfolio.js}"></script>
+	<script  th:src="@{/index_static/lib/classie/classie.js}"></script>
+	<script  th:src="@{/index_static/lib/fullpage-menu/fullpage-menu.js}"></script>
+	<script  th:src="@{/index_static/lib/photostack/photostack.js}"></script>
+	<script  th:src="@{/index_static/lib/superslides/superslides.js}"></script>
+
+	<!-- Template Main Javascript File -->
+	<script src="/index_static/js/main.js"></script>
+	<script>
+		$(document).ready(function(){
+			var domsg = "[[${domsg}]]";
+			if(domsg != ''){
+				alert(domsg);
+			}
+		})
+	</script>
+
+<!--<script type="text/javascript">-->
+<!--	$("#loginBtn").click(function (){-->
+<!--		$.ajax({-->
+<!--			url:"/login.do",-->
+<!--			contentType: "application/json;cherset=utf-8",-->
+<!--			dataType:"json", //返回格式为json-->
+<!--			async:true,//请求是否异步，默认为异步，这也是ajax重要特性-->
+<!--			data:{"email":$("#email").val(),"password":$("#password").val()}, //参数值-->
+<!--			type:"GET", //请求方式-->
+<!--			success:function(obj){-->
+<!--				if(obj.state==0){-->
+<!--					$("#msg").innerText(obj.message);-->
+<!--				}-->
+<!--				else{-->
+<!--					location.href="html";-->
+<!--				}-->
+<!--			}-->
+<!--			});-->
+<!--	})-->
+
+<!--</script>-->
+</body>
+</html>

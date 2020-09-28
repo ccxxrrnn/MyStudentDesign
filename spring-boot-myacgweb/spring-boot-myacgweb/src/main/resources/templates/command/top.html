@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="float: right" th:fragment="topindex">
+<div class="custom-navbar">[[${session.LoginUser}]]<a th:href="@{/doout}" th:if="${not #strings.isEmpty(session.LoginUser)}">退出</a><a class="fm-button" href="#">[[#{index.menu}]]</a></div>
+<div class="sidemenu" >
+    <ul class="fm-first-level">
+        <li><a href="#menu1">[[#{index.menu1}]]</a></li>
+        <li><a href="#menu2">[[#{index.menu2}]]</a></li>
+<!--        <li><a href="#menu3">[[#{index.menu3}]]</a></li>-->
+<!--        用户操作界面，th：if-->
+    </ul>
+    <nav id="menu1" class="active">
+        <a th:href="@{/index}">
+            <span class="subtitle" th:text="#{index.minue01}">The home page of my animation website shows the general information</span>
+            [[#{index.minue01main}]]
+        </a>
+        <a th:href="@{/login}"  >
+            <span class="subtitle" th:text="#{index.minue02}">User login interface, can unlock more gestures</span>
+            <!--        用户登陆界面，可以解锁更多的姿势 (中英文准备)-->
+            [[#{index.minue02main}]]
+        </a>
+        <a th:href="@{/register}"  >
+            <span class="subtitle" th:text="#{index.minue03}">Welcome to our queue, where you can post your own stuff</span>
+            <!--        欢迎加入我们的队列，在这里你可以发布自己的东西-->
+            [[#{index.minue03main}]]
+        </a>
+        <a th:href="@{/about}"  >
+            <span class="subtitle" th:text="#{index.minue04}">Here is our introduction, convenient can better know us</span>
+            <!--        这里有我们的介绍，方便可以更好的认识我们-->
+            [[#{index.minue04main}]]
+        </a>
+    </nav>
+    <nav id="menu2">
+        <a  th:href="@{/animation}" >
+            <span class="subtitle">We are an awesome team. Take a look.</span>
+            动画
+        </a>
+        <a  th:href="@{/his_play}">
+            <span class="subtitle">Single work page. Information about a project.</span>
+            番剧
+        </a>
+        <a  th:href="@{/picture}">
+            <span class="subtitle">List of our clients and some cool testimonials.</span>
+            图片
+        </a>
+        <a  th:href="@{/music}">
+            <span class="subtitle">A pricing list. Show your prices with style.</span>
+            音乐
+        </a>
+    </nav>
+<!--    <nav id="menu3">-->
+<!--        <a href="blog.html">-->
+<!--            <span class="subtitle">Main blog layout list.</span>-->
+<!--            Blog List-->
+<!--        </a>-->
+<!--        <a href="blog-post.html">-->
+<!--            <span class="subtitle">First variation of blog posts.</span>-->
+<!--            Blog Post-->
+<!--        </a>-->
+<!--        <a href="blog-posts-2.html">-->
+<!--            <span class="subtitle">Second variation of blog posts.</span>-->
+<!--            Blog Posts 2-->
+<!--        </a>-->
+<!--    </nav>-->
+</div></div>
+
+<!--<script>-->
+<!--    window.οnlοad=function() {-->
+<!--        $.ajax({-->
+<!--            url: "@{/top}",-->
+<!--            dataType: "json",-->
+<!--            type: "GET",-->
+<!--            async: true,-->
+<!--            success:function (data) {-->
+<!--            }-->
+<!--        })-->
+<!--</script>-->
+</body>
+</html>

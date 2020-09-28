@@ -1,0 +1,233 @@
+.addPeople{
+     display: inline-block;
+     width: 20px;
+     height: 20px;
+     background-image:url(icons/addpeople.png);
+     background-position:center center;
+     background-size: 20px 20px;
+     background-repeat: no-repeat;
+}
+.report{
+     display: inline-block;
+     width: 20px;
+     height: 20px;
+     background-image:url(icons/report.jpg);
+     background-position:center center;
+     background-size: 20px 20px;
+     background-repeat: no-repeat;
+}
+.peopleLogin{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(icons/peoplelogin.png);
+    background-position:center center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+.arrow-right{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(icons/next.png);
+    background-position:center center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+.icon-share{
+	display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-image: url(icons/share.png);
+    background-position:center center;
+    background-size: 23px 23px;
+    background-repeat: no-repeat;
+}
+.icon-lastpage{
+	display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-image: url(icons/lastpage.jpg);
+    background-position:center center;
+    background-size: 23px 23px;
+    background-repeat: no-repeat;
+}
+.icon-nextpage{
+	display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-image: url(icons/nextpage.jpg);
+    background-position:center center;
+    background-size: 23px 23px;
+    background-repeat: no-repeat;
+}
+.icon-person{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(icons/person.png);
+    background-position:center center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+.icon-favorite{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(icons/favorite.png);
+    background-position:center center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+.icon-comments{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(icons/comments.png);
+    background-position:center center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+.icon-changepassword{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(icons/changepassword.png);
+    background-position:center center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+.icon-settings{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(icons/settings.png);
+    background-position:center center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+.icon-logout{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(icons/logout.png);
+    background-position:center center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+.arrow-circle{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(icons/circle.png);
+    background-position:center center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+.arrow-back{
+	display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(icons/back.png);
+    background-position:center center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+.arrow-ahead{
+	display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(icons/ahead.png);
+    background-position:center center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+.chevron-right{
+	display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(icons/right.png);
+    background-position:center center;
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+}
+.ion-android-favorite-outline{
+	display: inline-block;
+    width: 28px;
+    height: 22.75px;
+    background-image: url(icons/notlike.png);
+    background-position:center center;
+    background-size: 28px 22.75px;
+    background-repeat: no-repeat;
+    border:hidden;
+}
+.ion-android-favorite{
+	display: inline-block;
+    width: 28px;
+    height: 22.75px;
+    background-image: url(icons/like.png);
+    background-position:center center;
+    background-size: 28px 22.75px;
+    background-repeat: no-repeat;
+    border:hidden;
+}
+.icon-search{
+	display: inline-block;
+    width: 11.5px;
+    height: 15px;
+    background-image: url(icons/search.png);
+    background-position:center center;
+    background-size: 11.5px 15px;
+    background-repeat: no-repeat;
+    border:hidden;
+}
+.ion-ios-email-outline{
+	display: inline-block;
+    width: 96px;
+    height: 64px;
+    background-image: url(icons/email.png);
+    background-position:center center;
+//  background-size: 126px 94.5px;
+    background-repeat: no-repeat;
+    border:hidden;
+}
+.ios-arrow-right{
+	display: inline-block;
+    width: 12px;
+    height: 9px;
+    background-image: url(icons/right.png);
+    background-position:center center;
+//  background-size: 126px 94.5px;
+    background-repeat: no-repeat;
+    border:hidden;
+}
+.ion-social-QQ{
+	display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url(icons/QQ.jpg);
+    background-position:center center;
+	background-size: 40px 40px;
+    background-repeat: no-repeat;
+    border:hidden;
+}
+.ion-social-weixin{
+	display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url(icons/weixin.jpg);
+    background-position:center center;
+background-size: 40px 40px;
+    background-repeat: no-repeat;
+    border:hidden;
+}
+.ion-social-weibo{
+	display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url(icons/weibo.jpg);
+    background-position:center center;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    border:hidden;
+}
